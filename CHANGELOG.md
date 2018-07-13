@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: MagicMirror
+# Community Hass.io Add-ons: MagicMirror²
 
 All notable changes to this add-on will be documented in this file.
 
@@ -13,7 +13,7 @@ No unreleased changes yet.
 
 ### Added
 
-- Initial release
+- Initial release of MagicMirror² addon
 
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
