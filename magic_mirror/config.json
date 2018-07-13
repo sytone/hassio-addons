@@ -1,0 +1,21 @@
+{
+    "name": "Magic Mirror",
+    "version": "0.19",
+    "slug": "magic_mirror",
+    "description": "Magic Mirror as a HASS.IO Addon",
+    "startup": "application",
+    "boot": "auto",
+    "ports": {
+        "8080/tcp": 8181
+    },
+    "options": {
+        "gitupdate": true,
+        "npmupdate": false
+    },
+    "schema": {
+        "gitupdate": "bool",
+        "npmupdate": "bool"
+    },
+    "webui": "http://[HOST]:[PORT:8080]/",
+    "map": ["config:rw"]
+  }
