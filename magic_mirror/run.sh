@@ -4,7 +4,7 @@ set -e
 OPTIONS_PATH=/data/options.json
 GITUPDATE=$(jq --raw-output ".gitupdate" $OPTIONS_PATH)
 NPMUPDATE=$(jq --raw-output ".npmupdate" $OPTIONS_PATH)
-
+NPMINSTALL=$(jq --raw-output ".npminstall" $OPTIONS_PATH)
 
 # Location of HASS configuration map to home assistant configuration
 HASS_CONFIG=/config
@@ -93,13 +93,31 @@ then
 fi
 
 # NPM Install
-echo "[INFO] Running NPM Install"
-if npm install --unsafe-perm --silent; then 
-    echo "[INFO] Dependencies installation Done!"
-else
-    echo "[ERROR] Unable to install dependencies!"
-    exit 1
+if [ "$NPMINSTALL" == "true" ];
+then
+    echo "[INFO] Running NPM Install"
+    if npm install --unsafe-perm --silent; then 
+        echo "[INFO] Dependencies installation Done!"
+    else
+        echo "[ERROR] Unable to install dependencies!"
+        exit 1
+    fi
 fi
+
+echo "[INFO] Installing configured modules"
+jq -r '.modules[] | .name + " " + .git' $OPTIONS_PATH |
+while read name git; do
+    echo "[INFO] Checking - $name @ $git"
+    if [ ! -d "$MIRROR_APP_PATH/modules/$name" ]; then
+        echo "[INFO] Installing - $name @ $git"
+        cd $MIRROR_APP_PATH/modules
+        git clone --depth 1 $git
+        cd $name/
+        npm install --unsafe-perm --silent
+    else
+        echo "[INFO] Skipping - $name @ $git"
+    fi    
+done
 
 # Check the configuration
 npm run config:check
