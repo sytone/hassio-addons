@@ -1,6 +1,6 @@
 {
     "name": "MagicMirror²",
-    "version": "0.20.0",
+    "version": "0.21.4",
     "slug": "magic_mirror",
     "description": "MagicMirror² is an open source modular smart mirror platform. This run the server in you HASS.IO environment.",
     "url": "https://github.com/sytone/hassio-addons",
@@ -11,11 +11,20 @@
     },
     "options": {
         "gitupdate": true,
-        "npmupdate": false
+        "npmupdate": false,
+        "npminstall": false,
+        "modules": [
+            { "name": "MMM-OnScreenMenu", "git": "https://github.com/shbatm/MMM-OnScreenMenu" },
+            { "name": "DailyXKCD", "git": "https://github.com/Blastitt/DailyXKCD.git" }
+          ]
     },
     "schema": {
         "gitupdate": "bool",
-        "npmupdate": "bool"
+        "npmupdate": "bool",
+        "npminstall": "bool",
+        "modules": [
+            { "name": "str", "git": "url" }
+          ]
     },
     "webui": "http://[HOST]:[PORT:8080]/",
     "map": ["config:rw"]
