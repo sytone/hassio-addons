@@ -32,8 +32,13 @@ Example add-on configuration:
 
 ```json
 {
-  "gitupdate": true,
-  "npmupdate": false
+    "gitupdate": true,
+    "npmupdate": false,
+    "npminstall": false,
+    "modules": [
+        { "name": "MMM-OnScreenMenu", "git": "https://github.com/shbatm/MMM-OnScreenMenu" },
+        { "name": "DailyXKCD", "git": "https://github.com/Blastitt/DailyXKCD.git" }
+    ]
 }
 ```
 
@@ -47,6 +52,15 @@ when the addon starts up.
 
 This option will call a npm update to ensure it is latest, this may be needed
 if you are using your own modules or have a security issue. 
+
+### Option: `npminstall`
+
+If enabled npm install will be run after the git update. Off by default.
+
+### Option: `modules`
+
+This is a collections of modules you want to have installed for your system. It
+will pull them down and run a `npm install` on them for you. 
 
 ## MagicMirror² configuration and user manuals
 
@@ -63,6 +77,9 @@ be created. Uner that there will be three more folders. These are
 When the addon starts it will copy these settings into the container and start the 
 MagicMirror² process. If you edit or update these you will need to restart the
 MagicMirror² addon in the HASS.IO interface.
+
+If you use the modules folder in the Home Assistant configuration make sure you 
+have done a `npm install` as it is just copied across. 
 
 For more information about configuring MagicMirror², please go to 
 [https://magicmirror.builders/](https://magicmirror.builders/)
