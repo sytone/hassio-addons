@@ -108,8 +108,8 @@ You could also [open an issue here][issue] GitHub.
 This is an active open-source project. We are always open to people who want to
 use the code or contribute to it.
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/magic_mirror.svg
-[commits]: https://github.com/hassio-addons/magic_mirror/commits/master
+[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons.svg
+[commits]: https://github.com/hassio-addons/commits/master
 [sytone]: https://github.com/sytone
 [home-assistant]: https://home-assistant.io
 [issue]: https://github.com/hassio-addons/magic_mirror/issues
