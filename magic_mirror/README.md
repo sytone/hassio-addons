@@ -4,7 +4,6 @@
 ![Project Stage][project-stage-shield]
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
-[![License][license-shield]](LICENSE.md)
 
 ## About
 
