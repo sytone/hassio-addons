@@ -118,7 +118,7 @@ use the code or contribute to it.
 [license-shield]: https://img.shields.io/github/license/hassio-addons/magic_mirror.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[releases-shield]: https://img.shields.io/github/release/hassio-addons.svg
-[releases]: https://github.com/hassio-addons/releases
-[repository]: https://github.com/hassio-addons/repository
+[releases-shield]: https://img.shields.io/github/release/sytone/hassio-addons.svg
+[releases]: https://github.com/sytone/hassio-addons/releases
+[repository]: https://github.com/sytone/hassio-addons
 [semver]: http://semver.org/spec/v2.0.0.htm
