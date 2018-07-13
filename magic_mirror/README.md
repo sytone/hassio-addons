@@ -115,7 +115,7 @@ use the code or contribute to it.
 [home-assistant]: https://home-assistant.io
 [issue]: https://github.com/hassio-addons/magic_mirror/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
-[license-shield]: https://img.shields.io/github/license/hassio-addons/magic_mirror.svg
+[license-shield]: https://img.shields.io/github/license/hassio-addons.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [releases-shield]: https://img.shields.io/github/release/sytone/hassio-addons.svg
