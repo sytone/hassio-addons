@@ -6,6 +6,7 @@
     "url": "https://github.com/sytone/hassio-addons",
     "startup": "application",
     "boot": "auto",
+    "homeassistant_api": true,
     "ports": {
         "8080/tcp": 8181
     },
