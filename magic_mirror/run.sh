@@ -125,7 +125,7 @@ while read name git cmd; do
         cd $name/
         npm install --unsafe-perm --silent
         
-        if [ "$cmd" = ""]; then
+        if [ "$cmd" == "" ]; then
             echo "[INFO] No Command to run"
         else
             echo "[INFO] running $cmd"
