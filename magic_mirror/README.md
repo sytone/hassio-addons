@@ -62,6 +62,19 @@ If enabled npm install will be run after the git update. Off by default.
 This is a collections of modules you want to have installed for your system. It
 will pull them down and run a `npm install` on them for you. 
 
+## Example
+
+When installed it will place a pre-configured config file in place to get you started. Thie
+can be edited. Please make sure you do not change the Home Assistant urls as they are for
+the internal API Proxy used by HASS.
+
+Default home page showing some sensor data
+![Default home with some sensor data](mm-home.png)
+
+Using the menu you can navigate to the full Home Assistant UI, handy for tablets.
+![Using menu to access ha layer](mm-ha-menu.png)
+
+
 ## MagicMirror² configuration and user manuals
 
 The add-on does not configure MagicMirror² for you. When it starts it will create
