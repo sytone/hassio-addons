@@ -142,8 +142,8 @@ var config = {
                 module: "MMM-HASS",
                 position: "top_left",
                 config: {
-                        host: "hass.local",
-                        port: "8123",
+                        host: "hassio/homeassistant", // Special docker ha api proxy
+                        port: "",
                         https: false,
                         devices: [
                         { deviceLabel: "Exterior",
@@ -170,7 +170,7 @@ var config = {
 		    module: 'MMM-homeassistant-sensors',
 		    position: 'top_left',
 		    config: {
-			    url: 'http://hass.local:8123/api/states',
+			    url: 'http://hassio/homeassistant/api/states', // Special docker ha api proxy
 			    prettyName: false,
 			    stripName: false,
 			    values: [{
