@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 ## Unreleased
 
 No unreleased changes yet.
+## [v0.23.0] (2018-07-18)
+
+### Added
+- Ability to run command after module installation.
 
 ## [v0.22.0] (2018-07-18)
 
@@ -40,3 +44,4 @@ No unreleased changes yet.
 [v0.21.4]: https://github.com/sytone/hassio-addons/tree/v0.21.4
 [v0.21.5]: https://github.com/sytone/hassio-addons/tree/v0.21.5
 [v0.22.0]: https://github.com/sytone/hassio-addons/tree/v0.22.0
+[v0.23.0]: https://github.com/sytone/hassio-addons/tree/v0.23.0
