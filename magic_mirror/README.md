@@ -69,10 +69,10 @@ can be edited. Please make sure you do not change the Home Assistant urls as the
 the internal API Proxy used by HASS.
 
 Default home page showing some sensor data
-![Default home with some sensor data](mm-home.png)
+![Default home with some sensor data](https://raw.githubusercontent.com/sytone/hassio-addons/master/magic_mirror/mm-home.png)
 
 Using the menu you can navigate to the full Home Assistant UI, handy for tablets.
-![Using menu to access ha layer](mm-ha-menu.png)
+![Using menu to access ha layer](https://raw.githubusercontent.com/sytone/hassio-addons/master/magic_mirror/mm-ha-menu.png)
 
 
 ## MagicMirror² configuration and user manuals
