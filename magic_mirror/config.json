@@ -1,36 +1,65 @@
 {
-    "name": "MagicMirror²",
-    "version": "0.22.0",
-    "slug": "magic_mirror",
-    "description": "MagicMirror² is an open source modular smart mirror platform. This run the server in you HASS.IO environment.",
-    "url": "https://github.com/sytone/hassio-addons",
-    "startup": "application",
-    "boot": "auto",
-    "homeassistant_api": true,
-    "ports": {
-        "8080/tcp": 8181
-    },
-    "options": {
-        "gitupdate": true,
-        "npmupdate": false,
-        "npminstall": false,
-        "modules": [
-            { "name": "MMM-OnScreenMenu", "git": "https://github.com/sytone/MMM-OnScreenMenu.git" },
-            { "name": "DailyXKCD", "git": "https://github.com/Blastitt/DailyXKCD.git" },
-            { "name": "MMM-pages", "git": "https://github.com/edward-shen/MMM-pages.git" },
-            { "name": "MMM-iFrame", "git": "https://github.com/alberttwong/MMM-iFrame.git" },
-            { "name": "MMM-homeassistant-sensors", "git": "https://github.com/leinich/MMM-homeassistant-sensors.git" },
-            { "name": "MMM-HASS", "git": "https://github.com/aserramonner/MMM-HASS.git" }
-        ]
-    },
-    "schema": {
-        "gitupdate": "bool",
-        "npmupdate": "bool",
-        "npminstall": "bool",
-        "modules": [
-            { "name": "str", "git": "url" }
-          ]
-    },
-    "webui": "http://[HOST]:[PORT:8080]/",
-    "map": ["config:rw"]
-  }
+  "name": "MagicMirror²",
+  "version": "0.22.0",
+  "slug": "magic_mirror",
+  "description": "MagicMirror² is an open source modular smart mirror platform. This run the server in you HASS.IO environment.",
+  "url": "https://github.com/sytone/hassio-addons",
+  "startup": "application",
+  "boot": "auto",
+  "homeassistant_api": true,
+  "ports": {
+    "8080/tcp": 8181
+  },
+  "options": {
+    "gitupdate": true,
+    "npmupdate": false,
+    "npminstall": false,
+    "modules": [
+      {
+        "name": "MMM-OnScreenMenu",
+        "git": "https://github.com/sytone/MMM-OnScreenMenu.git",
+        "cmd": ""
+      },
+      {
+        "name": "DailyXKCD",
+        "git": "https://github.com/Blastitt/DailyXKCD.git",
+        "cmd": ""
+      },
+      {
+        "name": "MMM-pages",
+        "git": "https://github.com/edward-shen/MMM-pages.git",
+        "cmd": ""
+      },
+      {
+        "name": "MMM-iFrame",
+        "git": "https://github.com/alberttwong/MMM-iFrame.git",
+        "cmd": ""
+      },
+      {
+        "name": "MMM-homeassistant-sensors",
+        "git": "https://github.com/leinich/MMM-homeassistant-sensors.git",
+        "cmd": ""
+      },
+      {
+        "name": "MMM-HASS",
+        "git": "https://github.com/aserramonner/MMM-HASS.git",
+        "cmd": ""
+      }
+    ]
+  },
+  "schema": {
+    "gitupdate": "bool",
+    "npmupdate": "bool",
+    "npminstall": "bool",
+    "modules": [
+      {
+        "name": "str",
+        "git": "url"
+      }
+    ]
+  },
+  "webui": "http://[HOST]:[PORT:8080]/",
+  "map": [
+    "config:rw"
+  ]
+}
