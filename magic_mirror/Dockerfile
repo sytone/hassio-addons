@@ -16,6 +16,7 @@ RUN git clone --depth 1 -b master https://github.com/MichMich/MagicMirror.git . 
 
 # Copy data
 COPY run.sh /
+COPY config.js /
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
