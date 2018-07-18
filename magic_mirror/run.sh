@@ -19,8 +19,18 @@ MM_CONFIG_ROOT=$HASS_CONFIG/magicmirror
 MM_CONF_PATH=$MM_CONFIG_ROOT/config
 MM_MODULES_PATH=$MM_CONFIG_ROOT/modules
 MM_CSS_PATH=$MM_CONFIG_ROOT/css
+echo "--------------------------------------------------------------------------------"
+echo " Running Magic Mirror setup"
+echo " GITUPDATE: $GITUPDATE"
+echo " NPMUPDATE: $NPMUPDATE"
+echo " NPMINSTALL: $NPMINSTALL"
+echo " MM_CONFIG_ROOT: $MM_CONFIG_ROOT"
+echo " MM_CONF_PATH: $MM_CONF_PATH"
+echo " MM_MODULES_PATH: $MM_MODULES_PATH"
+echo " MM_CSS_PATH: $MM_CSS_PATH"
+echo "--------------------------------------------------------------------------------"
 
-# Check for install, if not found major issue. 
+# Check for install, if not found major issue. Try to clone again.
 if [ ! -d "$MIRROR_APP_PATH" ]; then
     echo "[ERROR] Magic Mirror not found!!"
     mkdir -p "$MIRROR_APP_PATH"
@@ -32,8 +42,7 @@ fi
 
 cd "$MIRROR_APP_PATH"
 
-
-# Check for config and module and create if needed.
+# Check for config, module and css and create if needed.
 if [ ! -d "$MM_CONF_PATH" ]; then
     echo "[INFO] Creating Configuration Path at $MM_CONF_PATH"
     mkdir -p "$MM_CONF_PATH"
@@ -55,6 +64,7 @@ else
     echo "[INFO] Magic Mirror css folder exists @ $MM_CSS_PATH"
 fi
 
+# Default config file.
 if [ ! -f "$MM_CONF_PATH/config.js" ]; then
     echo "[INFO] Creating default configuration file."
     cp "$MIRROR_APP_PATH/config/config.js.sample" "$MM_CONF_PATH/config.js"
@@ -129,5 +139,24 @@ else
     exit 1
 fi
 
-echo "[INFO] Starting server only process in container"
+echo "--------------------------------------------------------------------------------"
+echo "[INFO] NOTE:"
+echo "[INFO] Ignore the log entry below and port that magic mirror is running on"
+echo "[INFO] this is the port used in the container. The configuration for the addon"
+echo "[INFO] is the port used which is 8181 by default."
+echo "--------------------------------------------------------------------------------"
+echo "[INFO] Local testing and trouble shooting."
+echo "[INFO] If you are having issues connect to the home assistant host via ssh"
+echo "[INFO] and run these commands to build and test the docker container outside of"
+echo "[INFO] hass.io. Ensure you are running them as root."
+echo "[INFO] replace 64f57845 with the folder containing magic_mirror"
+echo ""
+echo "cd /usr/share/hassio/addons/git/64f57845/magic_mirror"
+echo "docker build --build-arg BUILD_FROM=\"homeassistant/amd64-base:latest\" -t local/magic-mirror-addon ."
+echo "mkdir /tmp/mm_data
+echo "docker run --rm -v /tmp/mm_data:/data -p 8181:8080 local/magic-mirror-addon
+echo ""
+echo "--------------------------------------------------------------------------------"
+echo "[INFO] Start serveronly magic mirror process"
+echo "--------------------------------------------------------------------------------"
 node serveronly
