@@ -1,6 +1,6 @@
 {
   "name": "MagicMirror²",
-  "version": "0.23.2",
+  "version": "0.23.3",
   "slug": "magic_mirror",
   "description": "MagicMirror² is an open source modular smart mirror platform. This run the server in you HASS.IO environment.",
   "url": "https://github.com/sytone/hassio-addons",
@@ -54,7 +54,8 @@
     "modules": [
       {
         "name": "str",
-        "git": "url"
+        "git": "url",
+        "cmd": "str"
       }
     ]
   },
