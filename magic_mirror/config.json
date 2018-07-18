@@ -1,6 +1,6 @@
 {
   "name": "MagicMirror²",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "slug": "magic_mirror",
   "description": "MagicMirror² is an open source modular smart mirror platform. This run the server in you HASS.IO environment.",
   "url": "https://github.com/sytone/hassio-addons",
@@ -38,7 +38,7 @@
       {
         "name": "MMM-homeassistant-sensors",
         "git": "https://github.com/leinich/MMM-homeassistant-sensors.git",
-        "cmd": ""
+        "cmd": "cd $MIRROR_APP_PATH/modules/MMM-homeassistant-sensors && wget https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip && unzip master.zip"
       },
       {
         "name": "MMM-HASS",
