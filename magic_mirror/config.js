@@ -47,7 +47,7 @@ var config = {
                         icon: "eye", 
                         notification: "PAGE_CHANGED", 
                         payload: 1 },
-                    notify3: {  title: "HA", 
+                    notify3: {  title: "Home Assistant", 
                         icon: "eye", 
                         notification: "PAGE_CHANGED", 
                         payload: 2 }
@@ -58,7 +58,7 @@ var config = {
             module: "MMM-pages",
             config: {
                 modules: [
-                        [ "calendar", "clock","weatherforecast","currentweather","newsfeed" ],
+                        [ "calendar", "clock","weatherforecast","currentweather","newsfeed", "MMM-HASS", "MMM-homeassistant-sensors" ],
                         [ "DailyXKCD" ],
                         [ "MMM-iFrame" ]
                 ],
@@ -106,23 +106,23 @@ var config = {
             position: "lower_third"
         },
         {
-          module: "currentweather",
-          position: "top_right",
-          config: {
-            location: "New York",
-            locationID: "",  //ID from http://www.openweathermap.org/help/city_list.txt
-            appid: "YOUR_OPENWEATHER_API_KEY"
-          }
+            module: "currentweather",
+            position: "top_right",
+            config: {
+                location: "",
+                locationID: "",  //ID from http://www.openweathermap.org/help/city_list.txt
+                appid: ""
+            }
         },
         {
-          module: "weatherforecast",
-          position: "top_right",
-          header: "Weather Forecast",
-          config: {
-            location: "New York",
-            locationID: "5128581",  //ID from http://www.openweathermap.org/help/city_list.txt
-            appid: "YOUR_OPENWEATHER_API_KEY"
-          }
+            module: "weatherforecast",
+            position: "top_right",
+            header: "Weather Forecast",
+            config: {
+                location: "",
+                locationID: "",  //ID from http://www.openweathermap.org/help/city_list.txt
+                appid: ""
+            }
         },
         {
             module: "newsfeed",
@@ -137,7 +137,67 @@ var config = {
                 showSourceTitle: true,
                 showPublishDate: true
             }
-        }       
+        },
+        {
+                module: "MMM-HASS",
+                position: "top_left",
+                config: {
+                        host: "hass.local",
+                        port: "8123",
+                        https: false,
+                        devices: [
+                        { deviceLabel: "Exterior",
+                                deviceReadings: [
+                                { sensor: "sensor.dark_sky_temperature", icon: "wi wi-thermometer", suffix: "°"},
+                                { sensor: "sensor.dark_sky_humidity", icon: "wi wi-humidity", suffix: "%"}
+                                ]
+                        },
+                        { deviceLabel: "Interior",
+                                deviceReadings: [
+                                { sensor: "sensor.main_floor_temperature", icon: "wi wi-thermometer", suffix: "°", notification: "INDOOR_TEMPERATURE"},
+                                { sensor: "sensor.main_floor_humidity", icon: "wi wi-humidity", suffix: "%"}
+                                ]
+                        },
+                        { deviceLabel: "Internet",
+                                deviceReadings: [
+                                { sensor: "sensor.speedtest_ping", icon: "fa fa-tachometer-alt", suffix: ""}
+                                ]
+                        }
+                        ]
+                  }
+        },        
+        {
+		    module: 'MMM-homeassistant-sensors',
+		    position: 'top_left',
+		    config: {
+			    url: 'http://hass.local:8123/api/states',
+			    prettyName: false,
+			    stripName: false,
+			    values: [{
+					sensor: "sensor.processor_use",
+					icons: [{
+							"default": "chip"
+						}
+					]
+				}, {
+					sensor: "binary_sensor.downstairs_occupancy",
+					icons: [{
+							"state_off": "run",
+							"state_on": "run-fast"
+						}
+					]
+				}, {
+					sensor: "switch.study",
+					icons: [{
+							"state_off": "lightbulb-outline",
+							"state_on": "lightbulb-on-outline"
+						}
+					]
+				}
+			]
+
+		}
+	}        
     ]
 
 };
