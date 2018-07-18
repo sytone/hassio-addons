@@ -124,10 +124,19 @@ while read name git; do
         git clone --depth 1 $git
         cd $name/
         npm install --unsafe-perm --silent
+        
+        # TODO: Allow custom commands with modules for special cases like this...
+        if [ "$name" == "MMM-homeassistant-sensors" ]; then
+            cd $MIRROR_APP_PATH/modules/MMM-homeassistant-sensors
+            wget https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip
+            unzip master.zip
+        fi
     else
         echo "[INFO] Skipping - $name @ $git"
     fi    
 done
+
+
 
 # Check the configuration
 npm run config:check
