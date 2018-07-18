@@ -67,11 +67,11 @@ fi
 # Default config file.
 if [ ! -f "$MM_CONF_PATH/config.js" ]; then
     echo "[INFO] Creating default configuration file."
-    cp "$MIRROR_APP_PATH/config/config.js.sample" "$MM_CONF_PATH/config.js"
+    /bin/cp -f "/config.js" "$MM_CONF_PATH/config.js"
 else
     echo "[INFO] Magic Mirror configuration exists"
+    /bin/cp -f "/config.js" "$MM_CONF_PATH/config.js.hass.example"
 fi
-
 
 # Copy over the default configuration and modules
 # TODO: make a option to enable and disable this. 
