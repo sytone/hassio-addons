@@ -115,8 +115,8 @@ then
 fi
 
 echo "[INFO] Installing configured modules"
-jq -r '.modules[] | .name + " " + .git' $OPTIONS_PATH |
-while read name git; do
+jq -r '.modules[] | .name + " " + .git + " " + .cmd' $OPTIONS_PATH |
+while read name git cmd; do
     echo "[INFO] Checking - $name @ $git"
     if [ ! -d "$MIRROR_APP_PATH/modules/$name" ]; then
         echo "[INFO] Installing - $name @ $git"
@@ -125,11 +125,11 @@ while read name git; do
         cd $name/
         npm install --unsafe-perm --silent
         
-        # TODO: Allow custom commands with modules for special cases like this...
-        if [ "$name" == "MMM-homeassistant-sensors" ]; then
-            cd $MIRROR_APP_PATH/modules/MMM-homeassistant-sensors
-            wget https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip
-            unzip master.zip
+        if [ "$cmd" = ""]; then
+            echo "[INFO] No Command to run"
+        else
+            echo "[INFO] running $cmd"
+            eval $cmd
         fi
     else
         echo "[INFO] Skipping - $name @ $git"
