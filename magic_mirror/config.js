@@ -145,6 +145,7 @@ var config = {
                         host: "hassio/homeassistant", // Special docker ha api proxy
                         port: "",
                         https: false,
+                        hassiotoken: true,
                         devices: [
                         { deviceLabel: "Exterior",
                                 deviceReadings: [
