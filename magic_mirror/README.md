@@ -99,7 +99,7 @@ For more information about configuring MagicMirror², please go to
 
 ## Embedding into Home Assistant
 
-It is possible to embed Shinobi directly into Home Assistant.
+It is possible to embed Magic Mirror directly into Home Assistant.
 Home Assistant provides the `panel_iframe` component, for these purposes.
 
 Example configuration:
