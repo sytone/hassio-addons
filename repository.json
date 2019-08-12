@@ -1,5 +1,5 @@
 {
   "name": "Hass.IO Magic Mirror add-on repository",
-  "url": "https://home-assistant.io/",
+  "url": "https://github.com/sytone/hassio-addons",
   "maintainer": "Sytone <github@sytone.com>"
 }
