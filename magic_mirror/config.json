@@ -42,7 +42,7 @@
       },
       {
         "name": "MMM-HASS",
-        "git": "https://github.com/sytone/MMM-HASS.git",
+        "git": "https://github.com/aserramonner/MMM-HASS.git",
         "cmd": ""
       }
     ]
