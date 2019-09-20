@@ -44,7 +44,7 @@
       {
         "name": "MMM-HASS",
         "git": "https://github.com/aserramonner/MMM-HASS.git",
-        "cmd": ""
+        "cmd": "cd $MIRROR_APP_PATH/ && git checkout modules/node_modules/node_helper/index.js"
       }
     ]
   },
