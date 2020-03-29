@@ -12,7 +12,7 @@
  */
 
 var config = {
-    address: "", // Empty as running in a docker container.
+    address: "0.0.0.0", // Empty will only run on 127.0.0.1 - share on all addresses inside docker container.
     port: 8080, // Update port in HASS.IO configuration and not here.
     ipWhitelist: [], // Empty as in docker container, ACL from the host.
 
